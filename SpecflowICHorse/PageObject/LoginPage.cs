@@ -8,10 +8,16 @@ namespace SpecflowICHorse.PageObject
     public class Loginpage
     {
         IWebDriver driver;
+        private Func<IWebDriver> driver1;
 
         public Loginpage(IWebDriver driver)
         {
             this.driver = driver;
+        }
+
+        public Loginpage(Func<IWebDriver> driver1)
+        {
+            this.driver1 = driver1;
         }
 
         public void login1()

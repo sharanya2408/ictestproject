@@ -1,11 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SpecflowICHorse.PageObject;
 using TechTalk.SpecFlow;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace SpecflowICHorse.Stepdefinition
 {
@@ -13,6 +10,7 @@ namespace SpecflowICHorse.Stepdefinition
     public class ABle_to_navigate_from_TM_to_customer
     {
         IWebDriver driver();
+
         [BeforeScenario]
         void Setup()
         {
@@ -26,6 +24,7 @@ namespace SpecflowICHorse.Stepdefinition
         public void GivenILoginIntoThePortalUsingValidCredentials()
         {
             var login = new Loginpage(driver);
+            login.login1();
         }
 
         [When(@"I enter valid TM records\.")]
@@ -37,7 +36,7 @@ namespace SpecflowICHorse.Stepdefinition
         [Then(@"I navigate back to customer\.")]
         public void ThenINavigateBackToCustomer_()
         {
-            ScenarioContext.Current.Pending();
+           
         }
 
 
